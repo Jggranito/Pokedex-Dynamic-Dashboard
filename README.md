@@ -1,68 +1,57 @@
-# Pokedex Dynamic App
+# ⚡ Pokedex Dynamic Dashboard
 
-Esta é uma solução para a Quest React Avançado. As quests do curso DevQuest do [@devemdobro](instagram.com/devemdobro), são desafios que nos ajudam a aprimorar e desenvolver nossas habilidades de codificação.
+![Project Banner](./src/screenshot/preview.png)
+> *Nota: Substitua `./src/screenshot/preview.png` pelo caminho da sua imagem principal.*
 
-## Índice
+**Uma Single Page Application (SPA) robusta para consulta e análise de dados da PokeAPI. Focada em performance, arquitetura de componentes e experiência do usuário (UX).**
 
-- [Visão geral](#visão-geral)
-   - [O desafio](#O-desafio)
-   - [Links](#links)
-- [Construído com](#construído-com)
-- [Autor](#autor)
+## 📖 Sobre o Projeto
+Este projeto vai além de uma simples lista de Pokémons. Trata-se de uma aplicação completa de consumo de API RESTful que gerencia grandes volumes de dados aninhados (nested data). 
 
-### Visão geral
+O objetivo foi criar uma interface moderna e responsiva onde o usuário pode não apenas buscar, mas analisar profundamente os atributos, movimentos e estatísticas de cada Pokémon, alternando entre temas visuais (Dark/Light Mode) sem recarregar a página.
 
-#### O desafio
+## 🚀 Funcionalidades Principais
 
-A quest consiste em criar uma pokedex do 0 utilizando apenas os dados fornecidos pela api [pokéapi](https://pokeapi.co/). A página deveria contar uma home com uma lista dos 20 pokemons iniciais, com seus respectipos nome e imagen. Além disso, deveria conter também um botão para carregar mais pokemóns 10 pokemons a listagem atual, e exibi-los na tela.
-Cada pokemon deveria ser clicável e ao clicar o usuário poderia acessar uma página interna desse pokemon, com informações detalhadas como por exemplo tipo, lista de movimentos e habilidades.
-A home também deveria conter um botão para alternar entre tema claro e escuo.
+### 🔍 Busca e Filtragem Avançada
+- **Search Engine:** Pesquisa em tempo real por Nome ou ID.
+- **Filtros Dinâmicos:** Seleção por Tipagem (Fire, Water, etc.) afetando a listagem imediatamente.
+- **Paginação Otimizada:** Sistema de "Load More" para carregar dados sob demanda, economizando banda e processamento.
 
-Além disso, alguns requisitos técnicos deveriam ser seguidos, eles eram:
-- A aplicação deverá ser Single Page Application (SPA);
-- Utilizar React.js para o desenvolvimento da aplicação;
-- Utilizar Context API para criação do Theme Toggler (Alternador entre tema claro e escuro);
-- Utilizar styled-components para estilização dos componentes;
-- Utilizar react-router-dom para a navegação entre as páginas;
+### 📊 Análise Detalhada (Dashboard)
+Ao selecionar um Pokémon, o usuário acessa um painel com 3 abas de dados:
+1.  **Geral:** Dados vitais, XP base e tipagem.
+2.  **Status (Base Stats):** Gráficos visuais de HP, Attack, Defense, Speed, etc.
+3.  **Moveset Inteligente:** Lista completa de golpes filtrada por método de aprendizado (Level Up, TMs, Egg Moves, Tutor).
+    * *Detalhe:* Ao clicar em um golpe, um modal exibe Power, Accuracy, PP e a descrição técnica do movimento.
 
-Para esse desafio tive liberdade para criar o layout, estilo, estruturar e até adicionar outras funcionalidades como desejasse.
+### 🎨 UI/UX & Customização
+- **Theme Switcher:** Alternância global entre **Dark Mode** e **Light Mode** utilizando Context API para persistência de estado.
+- **Layout Responsivo:** Adaptação fluida para Mobile, Tablet e Desktop.
 
-##### Funcionalidades adicionais
+## 🛠️ Tecnologias & Arquitetura
 
-Além das funcionalidades exigidas para o desafio, foi adionado também algumas outras como:
+O projeto foi construído seguindo os princípios do **Clean Code** e Componentização.
 
-##### Filtro de exibição
+| Tech | Função no Projeto |
+| :--- | :--- |
+| **React.js** | Biblioteca core para construção da interface declarativa. |
+| **Context API** | Gerenciamento de estado global (Temas e Dados do Usuário). |
+| **Styled Components** | Estilização CSS-in-JS dinâmica e escopada. |
+| **React Router DOM** | Roteamento client-side para navegação fluida (SPA). |
+| **Axios / Fetch** | Camada de serviço para consumo da PokeAPI. |
 
-O filtro foi adicionado selecionar o que seria exibido na tela inicial, para que o usuário tivesse a opção de escolher apenas um determinado tipo de pokemon ou até mesmo pesquisar por nome ou id algum pokemon específico.
+## 💡 Desafios Técnicos Superados
 
-##### Aba de informação
+1.  **Drilling de Propriedades:** O uso da Context API eliminou a necessidade de passar props de tema manualmente por dezenas de componentes.
+2.  **Complexidade da API:** A PokeAPI possui dados extremamente aninhados. Foi criada uma camada de tratamento de dados para "limpar" o JSON antes de renderizar na tela, garantindo que componentes de UI recebam apenas o necessário.
+3.  **Performance de Renderização:** Otimização do carregamento de imagens e listas longas para evitar engasgos na rolagem.
 
-A aba de informação do pokémon selecionada possui três abas de informações, para que o usuário possa visualizar entre:
-- Informações gerais: Possui informçãoes como id do pokemon, nome, tipo e até XP. 
-- Status: Possui informações sobre status de vida, ataque, defesa, abilidade, etc.
-- Movimentos: Nessa aba foram adicionados todos os movimentos que o pokemon pode aprender, filtrados pela forma como são aprendidos. Sejam eles atráves do nivel, TM's, movimentos unicos de pokemons nascidos de ovos e até mesmo movimentos aprendidos atráves de tutores.
-Cada movimento também possui alguns dados como nome, PP (que seria quantas vezes o pokemon pode usar o golpe antes de se curar/descançar novamente) e o tipo.
-Também são clicaveis, exibindo assim uma nova aba contento a categoria do golpe, força e chanse de acerto. Além de contar com a descrição do golpe logo a baixo.
+## 🔗 Links
 
-#### Links
+- **Repositório:** [Acesse o Código](https://github.com/Jggranito/Pokedex-Dynamic-Dashboard)
+- **Live Preview:** [Ver Projeto Online](https://jggranito.github.io/Pokedex-Dynamic-Dashboard/)
 
-- Repositório disponível em: [https://github.com/Jggranito/Quest-React-Avancado](https://github.com/Jggranito/Quest-React-Avancado)
-- Site ao vivo: [https://jggranito.github.io/Quest-React-Avancado/](https://jggranito.github.io/Quest-React-Avancado/)
+---
 
-### Construído com
-
-- Marcação HTML5 semântica
-- Propriedades personalizadas de CSS
-- Validação com JS
-- API com JS
-- Tratamento de arquivos json
-- Single Page Application (SPA)
-- **React.js**
-- **Context API**
-- **Styled-components**
-- **React-router-dom**
-- Design responsivo
-
-### Autor
-
-- LinkedIn - [João Gabriel Granito](https://www.linkedin.com/in/jo%C3%A3o-gabriel-granito-77666a262/)
+Desenvolvido por **[João Gabriel Granito](https://www.linkedin.com/in/jo%C3%A3o-gabriel-granito-77666a262/)**
+*Mobile Developer & Front-End Specialist*
