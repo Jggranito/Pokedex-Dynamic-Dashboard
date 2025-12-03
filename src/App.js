@@ -35,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
 
     @font-face {
       font-family: 'Open Sans';
-      src: url('/Quest-React-Avancado/font/pokemon-dp-pro.ttf') format('truetype');
+      src: url('/Pokedex-Dynamic-Dashboard/font/pokemon-dp-pro.ttf') format('truetype');
     }
     font-family: 'Open Sans', Arial, sans-serif;
   }
